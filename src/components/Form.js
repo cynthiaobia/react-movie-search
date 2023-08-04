@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function Form(props) {
   const [formData, setFormData] = useState({
-    searchterm: ''
+    searchTerm: ''
   });
 
   const handleChange = (e) => {
@@ -17,10 +17,11 @@ function Form(props) {
 
   return (
     <div>
+      <h2>Search for a movie</h2>
       <form onSubmit={handleSubmit}>
         <input 
           type='text' 
-          name='searchterm'
+          name='searchTerm'
           onChange={handleChange}
           value={formData.searchTerm}
         />
