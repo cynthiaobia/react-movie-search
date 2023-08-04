@@ -1,10 +1,22 @@
 
-function MovieDisplay () {
-  return (
-    <div>
-      <h1>Movie Display</h1>
-    </div>
-  )
+function MovieDisplay ({movie}) {
+
+  const loaded = () => {
+    return (
+      <div>
+        <h1>{MovieDisplay.Title}</h1>
+        <h2>{MovieDisplay.Genre}</h2>
+        <img src={movie.Poster} alt={movie.Title} />
+        <h2>{movie.Year}</h2>
+      </div>
+    )
+  };
+  
+  const loading = () => {
+    return <h1>No Movie to Display</h1>;
+  };
+
+  return movie ? loaded() : loading();
 };
 
 export default MovieDisplay;
